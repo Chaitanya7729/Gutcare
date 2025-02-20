@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer {
+            background-color: #f8f8f8;
+            padding: 20px 40px;
+            font-size: 14px;
+            color: #7a7691;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-links a {
+            margin: 0 15px;
+            color: #7a7691;
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 24px;
+            margin-left: 10px;
+        }
+        @media (max-width: 768px){
+        
+            .footer {
+                flex-direction: column; /* Stack items vertically */
+                text-align: center;
+            }
+            .footer-links {
+                flex-direction: column; /* Stack links */
+                row-gap: 10px;
+                column-gap: 10px    ;
+                margin-top: 10px;
+            }
+            .social-icons {
+                margin-top: 15px;
+            }
+            .social-icons img {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="footer">
+        <div class="copyright">
+            <p>Copyright © 2025 Gutcare Clinic | All Rights Reserved</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Doctor</a>
+            <a href="#">Treatments</a>
+            <a href="#">Visitors</a>
+            <a href="#">About</a>
+        </div>
+        <div class="social-icons">
+            <img src="facebook-icon.png" alt="Facebook">
+            <img src="twitter-icon.png" alt="Twitter">
+            <img src="instagram-icon.png" alt="Instagram">
+        </div>
+    </footer>
+
+</body>
+</html>
