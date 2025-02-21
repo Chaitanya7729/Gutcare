@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f4ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .faq-container {
+            width: 900px;
+            background: transparent;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Heading Styling */
+        .faq-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-title span {
+            color: green;
+        }
+
+        /* FAQ Items */
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item.open {
+            border: 2px solid green;
+        }
+
+        .faq-question {
+            background: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background: white;
+            padding: 0 15px;
+            color: #333;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding: 10px 15px;
+        }
+
+        /* Arrow Image */
+       /* Style for the arrow container (circle) */
+.arrow {
+    width: 20px; /* Set width */
+    height: 20px; /* Set height */
+    background: url('arrow-down.png') no-repeat center center;
+    background-size: 50%;
+    display: inline-block;
+    border-radius: 50%; /* Makes it circular */
+    background-color: #12cf1e; /* Green background */
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* When expanded, change the arrow and background */
+.faq-item.active .arrow {
+    background: url('arrow-up.png') no-repeat center center;
+    background-size: 100%;
+    background-color: #2E7D32; /* Darker green */
+}
+
+        .faq-item.open .arrow {
+            transform: rotate(90deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="faq-container">
+        <h2 class="faq-title">Frequently Asked <span>Questions</span></h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What is Webflow and why is it the best website builder?
+                <img class="arrow" src="next-button.png" alt="Expand">
+            </div>
+            <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What is your favorite template from BRIX Templates?
+                <img class="arrow" src="next-button.png" alt="Expand">
+            </div>
+            <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How do you clone a Webflow Template from the Showcase?
+                <img class="arrow" src="next-button.png" alt="Expand">
+            </div>
+            <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Why is BRIX Templates the best Webflow agency out there?
+                <img class="arrow" src="next-button.png" alt="Expand">
+            </div>
+            <div class="faq-answer">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', function() {
+                const parent = this.parentElement;
+                const isOpen = parent.classList.contains('open');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('open');
+                });
+
+                // Toggle the clicked item
+                if (!isOpen) {
+                    parent.classList.add('open');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
