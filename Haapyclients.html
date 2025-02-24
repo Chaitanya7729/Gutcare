@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Clients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #eaf6ff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        h2 {
+            color: black;
+        }
+        h2 span {
+            color: green;
+        }
+      
+        .slider {
+            position: relative;
+            max-width: 900px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 20px;
+            background-color: #eaf6ff;
+        }
+
+        .testimonials {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 400%; /
+            padding: 20px 0; 
+            box-sizing: border-box;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            text-align: left;
+            flex: 0 0 100%; 
+            margin: 0; 
+            box-sizing: border-box;
+        }
+
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-header strong {
+            color: #192a56;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin: 5px 0;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+       
+        @media (max-width: 768px) {
+            .slider {
+                max-width: 100%;
+            }
+
+            .testimonials {
+                width: 400%; 
+            }
+
+            .testimonial {
+                padding: 15px;
+                flex: 0 0 100%;
+                margin: 10px 0;
+            }
+
+            .prev, .next {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Our Happy Clients</h2>
+        <p>We use only the best quality materials on the market in order to provide the best products to our patients.</p>
+        <div class="slider">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="https://via.placeholder.com/50" alt="Thomas Daniel">
+                        <strong>Thomas Daniel</strong>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>Phosfluorescently synergize covalent outsourcing through functional strategic theme areas. Assertively scale strategic portals without distinctive relationships. Holisticly cultivate tactical e-services before fully researched sources.</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="https://via.placeholder.com/50" alt="Alena Alex">
+                        <strong>Alena Alex</strong>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>Phosfluorescently synergize covalent outsourcing through functional strategic theme areas. Assertively scale strategic portals without distinctive relationships. Holisticly cultivate tactical e-services before fully researched sources.</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="https://via.placeholder.com/50" alt="Thomas Edison">
+                        <strong>Thomas Edison</strong>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>Phosfluorescently synergize covalent outsourcing through functional strategic theme areas. Assertively scale strategic portals without distinctive relationships. Holisticly cultivate tactical e-services before fully researched sources.</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="https://via.placeholder.com/50" alt="Jane Smith">
+                        <strong>Jane Smith</strong>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>Phosfluorescently synergize covalent outsourcing through functional strategic theme areas. Assertively scale strategic portals without distinctive relationships. Holisticly cultivate tactical e-services before fully researched sources.</p>
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const testimonialsContainer = document.querySelector('.testimonials');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const totalTestimonials = testimonials.length;
+
+       
+        testimonialsContainer.style.width = `${totalTestimonials * 100}%`;
+
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + totalTestimonials) % totalTestimonials;
+            testimonialsContainer.style.transform = `translateX(-${currentIndex * 100}%)`; 
+        }
+
+        function autoSlide() {
+            moveSlide(1);
+        }
+
+        setInterval(autoSlide, 3000);
+    </script>
+</body>
+</html>
