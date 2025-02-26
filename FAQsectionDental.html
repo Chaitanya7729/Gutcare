@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>FAQ Section</title>
+ <style>
+ body {
+ font-family: sans-serif;
+ background-color: #f8f7ff;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ margin: 0;
+ }
+
+ .container {
+ width: 80%;
+ max-width: 800px;
+ padding: 20px;
+ }
+
+ .faq-container {
+ background-color: #fff;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ padding: 30px;
+ }
+
+ .faq-header {
+ text-align: center;
+ margin-bottom: 20px;
+ }
+
+ .faq-header h1 {
+ color: #3f37c9;
+ margin-bottom: 5px;
+ }
+
+ .faq-item {
+ border-bottom: 1px solid #eee;
+ padding: 15px 0;
+ }
+
+ .faq-item:last-child {
+ border-bottom: none;
+ }
+
+ .faq-question {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-weight: 500;
+ color: #1e293b;
+ cursor: pointer;
+ }
+
+ .faq-question:hover {
+ color: #3f37c9;
+ }
+
+ .faq-answer {
+ color: #64748b;
+ line-height: 1.6;
+ margin-top: 10px;
+ padding-left: 20px;
+ display: none; /* Hidden by default, can be shown with JavaScript */
+ }
+
+ .faq-item.active .faq-answer {
+ display: block;
+ }
+
+ .faq-item.active .faq-question {
+ color: #3f37c9;
+ }
+
+ .appointment-button {
+ display: block;
+ background-color: #3f37c9;
+ color: white;
+ text-align: center;
+ padding: 12px 20px;
+ margin: 30px auto 0;
+ border-radius: 25px;
+ text-decoration: none;
+ width: fit-content;
+ }
+
+ .appointment-button:hover {
+ background-color: #312ba3;
+ }
+
+ /* Basic styling for the plus/minus icons */
+ .faq-question::after {
+ content: '+';
+ font-size: 1.5em;
+ }
+
+ .faq-item.active .faq-question::after {
+ content: '−';
+ }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <div class="faq-container">
+ <div class="faq-header">
+ <h1>Frequently Asked Questions</h1>
+ <p>Clear Solutions for All Your Dental Concerns</p>
+ </div>
+
+ <div class="faq-item">
+ <div class="faq-question">
+ What dental services do you offer at Dr. Gowd's Dental Clinic?
+ </div>
+ <div class="faq-answer">
+ We offer a wide range of services, including checkups, teeth whitening, braces, dental implants, root canals,
+ and more.
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div class="faq-question">
+ Are your treatments covered by insurance?
+ </div>
+ <div class="faq-answer">
+ Please contact our office with your insurance details, and we'd be happy to check your coverage.
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div class="faq-question">
+ How can I maintain oral hygiene after a dental procedure?
+ </div>
+ <div class="faq-answer">
+ Follow the specific instructions provided by your dentist. Generally, this includes gentle brushing, flossing,
+ and rinsing with an antiseptic mouthwash.
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div class="faq-question">
+ Do you offer emergency dental care?
+ </div>
+ <div class="faq-answer">
+ Yes, we offer emergency dental care. Please call our office immediately if you are experiencing severe pain or
+ trauma.
+ </div>
+ </div>
+
+ <div class="faq-item">
+ <div class="faq-question">
+ What are the signs I need to see a dentist?
+ </div>
+ <div class="faq-answer">
+ Signs include persistent toothache, swollen gums, bleeding while brushing, sensitivity to hot or cold, or
+ noticeable changes in your teeth or gums.
+ </div>
+ </div>
+
+ <a href="#" class="appointment-button">Schedule an Appointment</a>
+ </div>
+ </div>
+
+ <script>
+ document.querySelectorAll('.faq-question').forEach(question => {
+ question.addEventListener('click', () => {
+ const faqItem = question.parentNode;
+ faqItem.classList.toggle('active');
+ });
+ });
+ </script>
+</body>
+</html>
