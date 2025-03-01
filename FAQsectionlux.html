@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8ede8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .faq-container {
+            width: 60%;
+        }
+        .faq-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #823c81;
+            margin-bottom: 15px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #d8b8d6;
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            font-size: 18px;
+            color: #823c81;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            font-size: 16px;
+            color: #555;
+            background-color: #f8ede8;
+        }
+        .faq-question:after {
+            content: '\25BC'; /* Downward arrow */
+            font-size: 16px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .faq-question.active:after {
+            content: '\25B2'; /* Upward arrow */
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-title">Frequently Asked Questions</div>
+
+    <div class="faq-item">
+        <button class="faq-question">What are the common symptoms of piles/hemorrhoids?</button>
+        <div class="faq-answer">Common symptoms include pain, bleeding, itching, and discomfort in the anal region.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Looking for non-surgical piles treatment in Hyderabad?</button>
+        <div class="faq-answer">Non-surgical treatments include dietary changes, medications, and minimally invasive procedures.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">How to prevent piles recurrence after treatment?</button>
+        <div class="faq-answer">Prevent recurrence by maintaining a high-fiber diet, staying hydrated, and avoiding prolonged sitting.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Are there specialized piles treatments for pregnant women?</button>
+        <div class="faq-answer">Yes, treatments include lifestyle modifications, fiber-rich diets, and pregnancy-safe medications.</div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('active');
+            let answer = this.nextElementSibling;
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
